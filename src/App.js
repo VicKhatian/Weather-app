@@ -3,15 +3,25 @@ import { useState } from "react";
 
 function App() {
   const [text, setText] = useState("")
+  const [location, setLocation] =useState("")
 console.log(text)
+console.log(location)
   function handleChange(e) {
     setText(e.target.value)
   }
+
+  function handleClick(){
+    setLocation(text) 
+
+   }
 
   return (
     <div className="app">
       <div className="search">
         <input onChange={handleChange} placeholder="Enter Location" />
+       <button onclick={handleClick} className="btn-weather">
+         Submit
+       </button>
       </div>
       <div className="main">
         <div className="top">
