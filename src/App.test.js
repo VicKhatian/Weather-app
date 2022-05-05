@@ -1,8 +1,12 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+it("expect api call to change h1", async () => {
+  const fakeUserResponse = { data: "response" };
+  var { getByTestId } = render(<App />);
+  var apiFunc = jest.spyOn(global, "getApiData").mockImplementationOnce(() => {
+    return Promise.resolve({
+      json: () => Promise.resolve(fakeUserResponse),
+    });
+  });
 });
