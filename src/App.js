@@ -2,30 +2,36 @@ import { useState, useEffect } from "react";
 
 function App() {
   const [text, setText] = useState("");
-  const [location, setLocation] = useState("");
+  const [location, setLocation] = useState("London");
   const [data, setData] = useState(null);
   const [lat, setLat] = useState(null);
   const [long, setLong] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
+      const response = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=2d3e410f0ed7818625d5352a26aeb264`
+      );
+      const data = await response.json();
+      console.log(data);
+
       navigator.geolocation.getCurrentPosition(function (position) {
         setLat(position.coords.latitude);
         setLong(position.coords.longitude);
       });
-      if (lat) {
-        await fetch(
-          `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&appid=2d3e410f0ed7818625d5352a26aeb264`
-        )
-          .then((res) => res.json())
-          .then((result) => {
-            setData(result);
-            console.log(result);
-          });
-      }
+
+      await fetch(
+        `https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}&lon=${data.coord.lon}&appid=2d3e410f0ed7818625d5352a26aeb264`
+      )
+        .then((res) => res.json())
+        .then((result) => {
+          setData(result);
+          console.log(result);
+        });
     };
+
     fetchData();
-  }, [lat, long]);
+  }, [location]);
 
   function handleChange(e) {
     setText(e.target.value);
