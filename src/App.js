@@ -75,6 +75,7 @@ function App() {
             return (
               <div key={i} className="card">
                 <h2>{weekday[(dayOfWeek + i) % 7]}</h2>
+                
                 <p>{Math.round(day.temp.day - 273.15)}°C</p>
                 <p>{day.weather[0].description}</p>
                 <img src={`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`} alt="weather" />
@@ -83,7 +84,7 @@ function App() {
           })}
         </div>
       </div>
-      <div className="footer">Made with 🤘 for 383</div>
+  
     </div>
   );
 }
