@@ -11,7 +11,11 @@ Great free API with loads of information is on openweathermap.org
 ### URL for API
 
 For our app we used this API call, as our user prefer to see weather at their preffered location
+for top
 https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+
+for bottom
+https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&appid=2d3e410f0ed7818625d5352a26aeb264
 
 ### KEYS for API
 
