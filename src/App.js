@@ -40,7 +40,19 @@ function App() {
   function handleClick() {
     setLocation(text);
   }
-
+  const weekday = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  const d = new Date();
+  let dayOfWeek = d.getDay();
+  //console.log(weekday[day]);
+  //console.log(day);
   if (data === null) return <p>loading</p>;
 
   return (
@@ -53,18 +65,18 @@ function App() {
       </div>
       <div className="main">
         <div className="top">
-          <h1>London</h1>
+          <h1>{location}</h1>
           <h2>{Math.round(data.current.temp - 273.15)}°C</h2>
-          <h2>light rain</h2>
-          <h2>Feels like 6°C</h2>
-          <h2>Wind 5mph</h2>
-          <h2>Humidity 50%</h2>
+          <h2>{data.current.weather[0].description}</h2>
+          <h2>Feels like {Math.round(data.current.feels_like - 273.15)}°C</h2>
+          <h2>Wind speed {data.current.wind_speed}mph</h2>
+          <h2>Humidity {data.current.humidity}%</h2>
         </div>
         <div className="bottom">
-          {data.daily.map((day) => {
+          {data.daily.map((day, i) => {
             return (
               <div>
-                <h2>Friday</h2>
+                <h2>{weekday[(dayOfWeek + i) % 7]}</h2>
                 <p>{Math.round(day.temp.day - 273.15)}°C</p>
                 <p>{day.weather[0].description}</p>
               </div>
