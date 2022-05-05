@@ -5,11 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url(../public/sunset4.jpg) ;
+  background-image: url(../public/sunset4.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  
 }
 
 code {
@@ -18,9 +17,8 @@ code {
 }
 
 .app {
-  
   width: 100%;
-/*   height: 100%; */
+  /*   height: 100%; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -37,24 +35,27 @@ code {
   border: rgb(0, 0, 0) 0.5px solid;
   text-align: center;
   border-radius: 10px;
- min-width: 9vw;
+  min-width: 9vw;
   margin: 10px;
   padding: 10px;
   background-color: rgba(255, 254, 254, 0.295);
 }
 
-.bottom{
+.bottom {
   display: flex;
   flex-flow: row wrap;
 }
 
-input{
+input {
   font-size: 25px;
   padding: 6px;
   margin: 10px;
   border-radius: 9px;
 }
 
+.info {
+  font-size: 15px;
+}
 /* CSS */
 /* .button-23 {
   background-color: #FFFFFF;
@@ -80,31 +81,32 @@ input{
   -webkit-user-select: none;
   width: auto;
 } */
-.button-23{
+
+.button-23 {
   font-size: 25px;
-    padding: 6px;
-    margin: 10px;
-    border-radius: 9px;
-    border: 1px solid black;
+  padding: 6px;
+  margin: 10px;
+  border-radius: 9px;
+  border: 1px solid black;
 }
 .button-23:focus-visible {
   box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
-  transition: box-shadow .2s;
+  transition: box-shadow 0.2s;
 }
 
 .button-23:active {
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
   border-color: #000000;
-  transform: scale(.96);
+  transform: scale(0.96);
 }
 
 .button-23:disabled {
-  border-color: #DDDDDD;
-  color: #DDDDDD;
+  border-color: #dddddd;
+  color: #dddddd;
   cursor: not-allowed;
   opacity: 1;
 }
 
-.footer{
-  font-size:19px
+.footer {
+  font-size: 19px;
 }
