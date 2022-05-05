@@ -4,8 +4,7 @@ function App() {
   const [text, setText] = useState("");
   const [location, setLocation] = useState("London");
   const [data, setData] = useState(null);
-  const [lat, setLat] = useState(null);
-  const [long, setLong] = useState(null);
+  console.log(data);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -13,12 +12,12 @@ function App() {
         `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=2d3e410f0ed7818625d5352a26aeb264`
       );
       const data = await response.json();
-      console.log(data);
+      
 
-      navigator.geolocation.getCurrentPosition(function (position) {
-        setLat(position.coords.latitude);
-        setLong(position.coords.longitude);
-      });
+      // navigator.geolocation.getCurrentPosition(function (position) {
+      //   setLat(position.coords.latitude);
+      //   setLong(position.coords.longitude);
+      // });
 
       await fetch(
         `https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}&lon=${data.coord.lon}&appid=2d3e410f0ed7818625d5352a26aeb264`
@@ -51,8 +50,7 @@ function App() {
   ];
   const d = new Date();
   let dayOfWeek = d.getDay();
-  //console.log(weekday[day]);
-  //console.log(day);
+ 
   if (data === null) return <p>loading</p>;
 
   return (
@@ -75,10 +73,11 @@ function App() {
         <div className="bottom">
           {data.daily.map((day, i) => {
             return (
-              <div>
+              <div key={i} className="card">
                 <h2>{weekday[(dayOfWeek + i) % 7]}</h2>
                 <p>{Math.round(day.temp.day - 273.15)}°C</p>
                 <p>{day.weather[0].description}</p>
+                <img src={`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`} alt="weather" />
               </div>
             );
           })}
