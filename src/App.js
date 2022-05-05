@@ -57,7 +57,7 @@ function App() {
     <div className="app">
       <div className="search">
         <input onChange={handleChange} placeholder="Enter Location" />
-        <button onClick={handleClick} className="btn-weather">
+        <button  onClick={handleClick} className="button-23">
           Submit
         </button>
       </div>

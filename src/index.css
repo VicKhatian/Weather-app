@@ -1,23 +1,31 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url(../public/sunset4.jpg) ;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
 .app {
+  
+  width: 100%;
+/*   height: 100%; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
+
   margin: 0 auto;
 }
 
@@ -26,9 +34,77 @@ code {
 }
 
 .card {
-  border: black 3px solid;
+  border: rgb(0, 0, 0) 0.5px solid;
+  text-align: center;
   border-radius: 10px;
-  width: 60vw;
+ min-width: 9vw;
   margin: 10px;
   padding: 10px;
+  background-color: rgba(255, 254, 254, 0.295);
+}
+
+.bottom{
+  display: flex;
+  flex-flow: row wrap;
+}
+
+input{
+  font-size: 25px;
+  padding: 6px;
+  margin: 10px;
+  border-radius: 9px;
+}
+
+/* CSS */
+/* .button-23 {
+  background-color: #FFFFFF;
+  border: 1px solid #222222;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #222222;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  padding: 8px 23px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
+  user-select: none;
+  -webkit-user-select: none;
+  width: auto;
+} */
+.button-23{
+  font-size: 25px;
+    padding: 6px;
+    margin: 10px;
+    border-radius: 9px;
+    border: 1px solid black;
+}
+.button-23:focus-visible {
+  box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+  transition: box-shadow .2s;
+}
+
+.button-23:active {
+  background-color: #F7F7F7;
+  border-color: #000000;
+  transform: scale(.96);
+}
+
+.button-23:disabled {
+  border-color: #DDDDDD;
+  color: #DDDDDD;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.footer{
+  font-size:19px
 }
