@@ -1,9 +1,23 @@
 
 function App() {
+
+  function handleChange() {
+
+  }
+
+
   return (
-    <div className="App">
+    <div className="app">
+      <div className="search">
+        <input onChange={handleChange} placeholder="Enter Location" />
+      </div>
+      <div className="main">
+        
+      </div>
+      <div className="footer">
+        
+      </div>
       
-      <p>hello</p>
     </div>
   );
 }
